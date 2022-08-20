@@ -15,8 +15,8 @@ sidebarBtn.addEventListener("click", ()=>{
   sidebar.classList.toggle("close");
 });
 
-document.querySelector("#profile_name").textContent = JSON.parse(localStorage.kcslibraryInfo).names.split(' ')[0]
-document.querySelector("#job").textContent = JSON.parse(localStorage.kcslibraryInfo).title
+document.querySelector("#profile_name").textContent = JSON.parse(localStorage.libraryInfo).names.split(' ')[0]
+document.querySelector("#job").textContent = JSON.parse(localStorage.libraryInfo).title
 
 if(window.innerWidth <= 650){
   document.querySelector('.sidebar').classList.add('close')

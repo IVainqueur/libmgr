@@ -21,7 +21,7 @@ document.querySelector("form input[type=submit]").addEventListener('click', (e)=
             }else if(res.code == "#NoSuchID"){
                 alert("Incorrect email or password")
             }else if(res.code == "#AccessGranted"){
-                localStorage.kcslibraryInfo = JSON.stringify(res.info)
+                localStorage.libraryInfo = JSON.stringify(res.info)
                 location.href = "/dashboard"
                 console.log(res)
             }

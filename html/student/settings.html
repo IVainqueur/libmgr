@@ -100,10 +100,10 @@
 
 </script>
   <script>
-    document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.kcslibraryInfo).names
-    document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.kcslibraryInfo).ID
+    document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.libraryInfo).names
+    document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.libraryInfo).ID
     document.querySelector('label[for=user-password] p').textContent = "password@123"
-    document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.kcslibraryInfo).title
+    document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.libraryInfo).title
 
   </script>
 </body>
