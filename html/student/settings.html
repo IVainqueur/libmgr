@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Dashboard| KCS Library</title>
+    <title>Dashboard| Library</title>
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/settings.css">
    
@@ -36,7 +36,7 @@
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">KCS LIBRARY</span>
+      <span class="logo_name">LIBRARY</span>
     </div>
     <ul class="nav-links">
       <li>
@@ -100,10 +100,10 @@
 
 </script>
   <script>
-    document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.kcslibraryInfo).names
-    document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.kcslibraryInfo).ID
+    document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.libraryInfo).names
+    document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.libraryInfo).ID
     document.querySelector('label[for=user-password] p').textContent = "password@123"
-    document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.kcslibraryInfo).title
+    document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.libraryInfo).title
 
   </script>
 </body>

@@ -6,17 +6,17 @@ let request = await fetch('/getSettings', {
     'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-    _id: JSON.parse(localStorage.kcslibraryInfo)._id
+    _id: JSON.parse(localStorage.libraryInfo)._id
     })
 })
 let theInfo = await request.json()
 if((theInfo.code == "#Success") && (theInfo.data != null)){
-    localStorage.kcslibraryInfo = JSON.stringify(theInfo.data)
-    document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.kcslibraryInfo).names
-    document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.kcslibraryInfo).ID
-    document.querySelector('label[for=user-class] p').textContent = (JSON.parse(localStorage.kcslibraryInfo).class) ? (JSON.parse(localStorage.kcslibraryInfo).class) : ''
-    document.querySelector('label[for=user-password] p').textContent = JSON.parse(localStorage.kcslibraryInfo).password
-    document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.kcslibraryInfo).title
+    localStorage.libraryInfo = JSON.stringify(theInfo.data)
+    document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.libraryInfo).names
+    document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.libraryInfo).ID
+    document.querySelector('label[for=user-class] p').textContent = (JSON.parse(localStorage.libraryInfo).class) ? (JSON.parse(localStorage.libraryInfo).class) : ''
+    document.querySelector('label[for=user-password] p').textContent = JSON.parse(localStorage.libraryInfo).password
+    document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.libraryInfo).title
 
     AlertAlt("Up-to-date data loaded")
     setTimeout(()=>{document.querySelector('.alertDIV').children[1].click()}, 300)
@@ -24,11 +24,11 @@ if((theInfo.code == "#Success") && (theInfo.data != null)){
 }
 getSettings()
 let editing = false
-document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.kcslibraryInfo).names
-document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.kcslibraryInfo).ID
-document.querySelector('label[for=user-class] p').textContent = (JSON.parse(localStorage.kcslibraryInfo).class) ? (JSON.parse(localStorage.kcslibraryInfo).class) : ''
-document.querySelector('label[for=user-password] p').textContent = JSON.parse(localStorage.kcslibraryInfo).password
-document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.kcslibraryInfo).title
+document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.libraryInfo).names
+document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.libraryInfo).ID
+document.querySelector('label[for=user-class] p').textContent = (JSON.parse(localStorage.libraryInfo).class) ? (JSON.parse(localStorage.libraryInfo).class) : ''
+document.querySelector('label[for=user-password] p').textContent = JSON.parse(localStorage.libraryInfo).password
+document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.libraryInfo).title
 
 
 document.querySelector('#EditBTN').addEventListener('click', (e)=>{
@@ -50,7 +50,7 @@ if(!editing){
     }
     // console.log()
     let toSend = {
-    _id: JSON.parse(localStorage.kcslibraryInfo)._id,
+    _id: JSON.parse(localStorage.libraryInfo)._id,
     body: {
         names: document.querySelector('label[for=user-name] p').textContent,
         ID: document.querySelector('label[for=user-code] p').textContent,
