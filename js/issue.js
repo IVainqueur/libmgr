@@ -122,7 +122,7 @@ async function checkForBook(){
 }
 async function checkForUser(){
     document.querySelector('#StudentCodeOrNameBox').className = "checking"
-    let what = (document.querySelector('#StudentCodeOrNameBoxInput').value.slice(0, 4).toUpperCase() == "KCS-") ? "code" : "names"
+    let what = parseInt(document.querySelector('#StudentCodeOrNameBoxInput').value) ? "code" : "names"
     await fetch("/checkForUser", {
         method: "POST",
         headers: {
