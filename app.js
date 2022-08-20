@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const bodyParser = require('body-parser')
+const {json} = require('body-parser')
 const path = require('path')
-const mongo = require('mongoose')
+const {connect} = require('mongoose')
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
 const queryString = require('querystring')
@@ -11,15 +11,16 @@ const queryString = require('querystring')
 
 //middleware
 app.use(cors())
-app.use(bodyParser.json())
+app.use(json())
 app.use(cookieParser())
 app.use('/html', express.static('html'))
 app.use('/css', express.static('css'))
 app.use('/js', express.static('js'))
 app.use('/img', express.static('img'))
+require('dotenv').config()
 
 //Connecting to the database
-mongo.connect('mongodb+srv://user:password-123@cluster0.4q5xsjm.mongodb.net/libdb?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
+connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
     if(err) return console.log(err)
     // if(err) return console.log('#FailedConnectionToDB')
     console.log('#ConnectedToDB')
@@ -143,7 +144,7 @@ app.post("/addUser", (req,res)=>{
             names: req.body.names,
             ID: req.body.ID,
             class: req.body.class,
-            password: "password@123",
+            password: process.env.DEFAULT_PASSWORD,
             title: req.body.title
         })
         newStudent.save((err, doc)=>{
@@ -520,7 +521,7 @@ const signUp = (toUse)=>{
             names: student["Lastname"],
             ID: `KCS-${student["Student ID"]}`,
             class: "1 A",
-            password: "password@123",
+            password: process.env.DEFAULT_PASSWORD,
             title: "student"
         })
     }
@@ -533,7 +534,7 @@ const signUp = (toUse)=>{
     //     names: toUse.names,
     //     studentID: toUse.ID,
     //     class: toUse.class,
-    //     password: "password@123",
+    //     password: process.env.DEFAULT_PASSWORD,
     //     title: toUse.title
     // })
     // newStudent.save((err, doc)=>{
