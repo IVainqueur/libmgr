@@ -8,7 +8,6 @@ const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
 const queryString = require('querystring')
 
-
 //middleware
 app.use(cors())
 app.use(json())
