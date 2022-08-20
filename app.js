@@ -19,7 +19,7 @@ app.use('/js', express.static('js'))
 app.use('/img', express.static('img'))
 
 //Connecting to the database
-mongo.connect('mongodb+srv://kcslibrary:Gilup%40nist1@cluster0.j3dn6.mongodb.net/library?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
+mongo.connect('mongodb+srv://user:<password>@cluster0.4q5xsjm.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, (err)=>{
     if(err) return console.log(err)
     // if(err) return console.log('#FailedConnectionToDB')
     console.log('#ConnectedToDB')
