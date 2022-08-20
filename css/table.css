@@ -1,0 +1,128 @@
+/*/////////////////////ISSUED BOOKS CSS/////////////////*/
+*{
+    padding: O;
+    margin: 0;
+    outline: 0;
+}
+
+    
+  
+
+.filter{
+    padding-bottom: 50px;
+}
+.filter table{
+    margin: 30px auto;
+    width: 99%;
+    height: fit-content;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 4px 5px rgba(32,32,32,.3);
+    background: #fafafa;
+    /* border-radius: 12px; */
+    text-align: center;
+    overflow: hidden;
+    word-break: break-word;
+    
+}
+th{
+    background: #1d1b31;
+    color: #fff;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+ th,td{
+    padding: 5px 10px;
+    height: 50px;
+    text-align: start;
+
+}
+td{
+    font-family: 'open sans' ,sans-serif;
+    /* text-align: start; */
+    transition: .5s ease;
+}
+.td{
+    display: block;
+    text-align: end;
+    position: relative;
+    padding: 15px;
+    padding-left: 30px;
+    border-bottom: 1px solid rgb(128 128 128 / 10%);
+}
+.td::before{
+    content: attr(head);
+    position: absolute;
+    font-weight: bold;
+    top: 0%;
+    left: 0;
+    padding: 15px;
+}
+.td:last-child{
+    border-bottom: 2px solid #1d1b31;
+}
+tr:nth-child(odd){
+    background-color:#eeee;
+}
+
+.Search{
+    width: 100%;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+#SearchBox{
+    padding: 5px 20px;
+    border: none;
+    border-bottom: 1px solid #1d1b31;
+    outline: none;
+    /* background: #c9c6c6; */
+    width: 400px;
+    height: fit-content;
+    margin: 0 20px;
+}
+
+
+.ActionButton{
+    border: none;
+    outline: none;
+    color: white;
+    /* font-size: 35px; */
+    height: fit-content;
+    font-weight: bold;
+    background: #1d1b31;
+    transition: .4s ease;
+    padding: 10px 20px;
+    border-radius: 55px;
+}
+
+.ActionButton:hover{
+    transform: scale(1.05);
+}
+
+@media(max-width: 1000px){
+    .filter table{
+        width: 95%;
+    }
+}
+
+@media print{
+    .sidebar{
+        display: none;
+    }
+    .Search{
+        display: none;
+    }
+    .home-section .home-content{
+        display: none;
+    }
+    .home-section{
+        width: 100vw;
+        /* display: none; */
+        left: 0;
+    }
+}

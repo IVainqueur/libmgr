@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard| KCS Library</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <!-- <link rel="stylesheet" href="../css/settings.css"> -->
+   
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+       .setting{
+         padding: 40px;
+       }
+       button{
+         padding: 20px 40px;
+         background-color: #1d1b31;
+         color: white;
+         border: none;
+         outline: none;
+         border-radius: 2px;
+         font-weight: bold;
+       }
+       label{
+         display: flex;
+         flex-direction: row;
+         font-weight: bold;
+       }
+       label p{
+         margin-left: 10px;
+         font-weight: 300;
+       }
+     </style>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">KCS LIBRARY</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="/dashboard">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a> 
+        <ul class="sub-menu blank" id="btn">
+          <li><a class="link_name" href="/dashboard">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book'></i>
+            <span class="link_name" id="manage">Manage Books</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Manage Books</a></li>
+          <li><a href="/addBook">Add Books</a></li>
+          
+          <li><a href="/issued">Issued books</a></li>
+          <li><a href="/issue">Issue</a></li>
+          <li><a href="/updateBook">Update</a></li>
+        </ul>
+      </li>
+    
+      <li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-user-account'></i>
+            <span class="link_name">Manage users</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Manage users</a></li>
+          <li><a href="/manageUsers">View users</a></li>
+          <li><a href="/addUser">Add a User</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/explore">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/explore">Explore</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/history">
+          <i class='bx bx-history'></i>
+          <span class="link_name">History</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/history">History</a></li>
+        </ul>
+      </li>
+      <li class="active">
+        <a href="/settings">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/settings">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!-- <img src="image/profile.jpg" alt="profileImg"> -->
+      </div>
+      <div class="name-job">
+        <div id="profile_name">Justin</div>
+        <div id="job">librarian</div>
+      </div>
+      <i class='bx bx-log-out'  onClick="location.href = ''"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text" id="menu">MENU</span>
+    </div>
+    <h1 id="PageTitle">Overdue</h1>
+    <div class="Search">
+        <input type="text" id="SearchBox" placeholder="Search ...">
+    </div>
+    <div class="filter">
+        
+        <table>
+            <thead></thead>
+            <tbody></tbody>
+            </table>
+        </div>
+  </section>
+  
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="../js/sidebar.js"></script>
+<script src="../js/table.js"></script>
+<script>
+    let one = Date.now()
+    let two = new Date(one)
+    let milliSecLess = one - (two.getMilliseconds()+two.getSeconds()*1000 + two.getMinutes()*1000*60 + two.getHours()*1000*60*60) + 7200000
+
+    fetch(`/overdueReport/false/${milliSecLess}/000`)
+    .then(res => res.json())
+    .then((data)=>{
+        console.log(data)
+        data.data.map(x => x.issuedDate = new Date(x.issuedDate).toString().slice(0, 15))
+        data.data.map(x => x.returnDate = new Date(x.returnDate).toString().slice(0, 15))
+        buildTable(["bookTitle", "bookCode", "issuedDate", "returnDate"], data.data, {title: "Books supposed to have been returned"})
+    })
+</script>
+</body>
+</html>

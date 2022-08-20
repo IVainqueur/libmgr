@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard| KCS Library</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+   
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">KCS LIBRARY</span>
+    </div>
+    <ul class="nav-links">
+      <li class="active">
+        <a href="/dashboard">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a> 
+        <ul class="sub-menu blank" id="btn">
+          <li><a class="link_name" href="/dashboard">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+   </li>
+      <li>
+        <a href="/explore">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/explore">Explore</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <a href="/settings">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/settings">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!-- <img src="image/profile.jpg" alt="profileImg"> -->
+      </div>
+      <div class="name-job">
+        <div id="profile_name">Justin</div>
+        <div id="job">Student</div>
+      </div>
+      <i class='bx bx-log-out'  onClick="location.href = ''"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text" id="menu">MENU</span>
+    </div>
+    <div class="board">
+      <div class="info">
+        <h3>Due Today</h3>
+        <p>Books to return today</p>
+        <h1>10</h1>
+      </div>
+      <div class="info">
+        <h3>Issued</h3>
+        <p>Books issued today</p>
+        <h1>2</h1>
+      </div>
+      <div class="info">
+        <h3 >The week</h3>
+        <p>books issued this week</p>
+        <h1>20</h1>
+      </div>
+    </div>
+  </section>
+<script src="../js/sidebar.js">
+
+</script>
+  
+</body>
+</html>

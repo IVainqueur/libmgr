@@ -1,0 +1,118 @@
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+}
+form .Field{
+    display: flex;
+    flex-direction: column;
+}
+form .Field .CodesInput{
+    display: flex;
+    flex-wrap: wrap;
+}
+form .Field .CodesInput p{
+    height: 50px;
+    min-width: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    outline: none;
+}
+form .Field .AddBTN{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    box-shadow: 3px 3px 15px #6e6e6e;
+    transition: .1s ease;
+}
+form .Field .AddBTN:hover {
+    background-color: #e2e2e2;
+}
+form input{
+    padding: 20px;
+    border: none;
+    outline: none;
+    background-color: #c9c6c6;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    /* border-radius: 55px; */
+}
+
+form select{
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+form > button{
+    padding: 20px;
+    color: white;
+    background-color: #1d1b31;
+    outline: none;
+    border: none;
+}
+form .Field{
+    position: relative;
+}
+label{
+    display: flex;
+    flex-direction: column;
+}
+
+.unFilled :nth-child(2){
+    box-shadow: 0px 0px 10px rgba(192, 0, 0, 0.753);
+}
+.unFilled::after{
+    /* position: absolute;
+    top: 0%;
+    right: 0; */
+    color: red;
+    content: "This field should be filled";
+}
+
+.noCodes{
+    /* box-shadow: 0px 0px 10px rgba(192, 0, 0, 0.753); */
+}
+.noCodes::after{
+    content: "Please add codes of the book's copies";
+    color: red;
+}
+.booksDontMatchCodes{
+    color: red;
+    content: "The number of books entered does not match the numbe of codes entered";
+}
+
+.noCategory{
+    /* box-shadow: 0px 0px 10px rgba(192, 0, 0, 0.753); */
+}
+.noCategory::after{
+    content: "Select a book category";
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+/* Media queries */
+@media(max-width: 800px){
+    form{
+        width: 80%;
+    }
+}
+
+@media(max-width: 480px){
+    form{
+        width: 90%;
+    }
+}

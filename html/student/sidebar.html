@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard| KCS Library</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+   
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">KCS LIBRARY</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="/dashboard">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a> 
+        <ul class="sub-menu blank" id="btn">
+          <li><a class="link_name" href="/dashboard">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book'></i>
+            <span class="link_name" id="manage">Manage Books</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+      <li>
+        <a href="/explore">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">booking</span><!--here its to book a book and when he does this action 
+          make sure that you'll make another page of recommandations in the admins account to see those who booked and 
+        do accept or denie if he accept then he tells hee/him time to take it nd if he denies student get notifyed as booking failed-->
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/explore">book a book </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/explore">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Updates</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/explore">Updates</a></li><!--any ting that will be changed in admins 
+          account will be dispalyed here the added book the editd info of a student and others except the profile informations-->
+        </ul>
+      </li>
+      <li>
+        <a href="/explore">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/explore">Explore</a></li>
+        </ul>
+      </li>
+     
+      <li>
+        <a href="/settings">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/settings">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!-- <img src="image/profile.jpg" alt="profileImg"> -->
+      </div>
+      <div class="name-job">
+        <div id="profile_name">Justin</div>
+        <div id="job">librarian</div>
+      </div>
+      <i class='bx bx-log-out'  onClick="location.href = ''"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text" id="menu">MENU</span>
+    </div>
+  </section>
+<script src="../js/sidebar.js">
+
+</script>
+  
+</body>
+</html>
