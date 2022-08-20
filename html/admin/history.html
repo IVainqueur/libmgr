@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>History | KCS Library</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/explore.css">
+    <link rel="stylesheet" href="../css/issue.css">
+    <link rel="stylesheet" href="../css/table.css">
+   
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+         #printBTN{
+             height: calc(24px + 20px);
+             padding: 10px;
+
+             margin: auto 10px;
+             border-radius: 50%;
+             transition: .4s ease;
+         }
+         #printBTN:hover{
+             /* box-shadow: 0px 0px 10px #1d1b31; */
+             background-color: rgba(0,0,0,0.1);
+         }
+     </style>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">KCS LIBRARY</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="/dashboard">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a> 
+        <ul class="sub-menu blank" id="btn">
+          <li><a class="link_name" href="/dashboard">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book'></i>
+            <span class="link_name" id="manage">Manage Books</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Manage Books</a></li>
+          <li><a href="/addBook">Add Books</a></li>
+          
+          <li><a href="/issued">Issued books</a></li>
+          <li><a href="/issue">Issue</a></li>
+          <li><a href="/updateBook">Update</a></li>
+        </ul>
+      </li>
+    
+      <li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-user-account'></i>
+            <span class="link_name">Manage users</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Manage users</a></li>
+          <li><a href="/manageUsers">View users</a></li>
+          <li><a href="/addUser">Add users</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/explore">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/explore">Explore</a></li>
+        </ul>
+      </li>
+      <li class="active">
+        <a href="/history">
+          <i class='bx bx-history'></i>
+          <span class="link_name">History</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/history">History</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/settings">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/settings">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+     
+      </div>
+      <div class="name-job">
+        <div id="profile_name">Justin</div>
+        <div id="job">librarian</div>-+
+      </div>
+      <i class='bx bx-log-out'  onClick="location.href = ''"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text" id="menu">MENU</span>
+    </div>
+    <h1 id="PageTitle">History</h1>
+
+    <div class="Search">
+        <input type="text" id="SearchBox" placeholder="Search ...">
+        <img src="https://img.icons8.com/material-outlined/24/000000/print.png" id="printBTN" onclick="window.print()"/>
+    </div>
+    <!-- <div class="categories">
+        <span class="category">Physics</span>
+        <span class="category">Physics</span>
+        <span class="category">Physics</span>
+        <span class="category">Physics</span>
+        <span class="category">Physics</span>
+        <span class="category">Physics</span>
+        <span class="category">Physics</span>
+        <span class="category">Physics</span>
+    </div> -->
+    <div class="filter">
+        
+      <table>
+          <thead></thead>
+          <tbody></tbody>
+          </table>
+      </div>
+  </section>
+ 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="../js/sidebar.js"></script>
+<script src="../js/table.js"></script>
+<script src="../js/history.js"></script>
+<!-- <script src="../js/getBooks.js"></script> -->
+</body>
+</html>

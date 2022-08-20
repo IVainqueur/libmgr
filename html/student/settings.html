@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard| KCS Library</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/settings.css">
+   
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+       .setting{
+         padding: 40px;
+       }
+       button{
+         padding: 20px 40px;
+         background-color: #1d1b31;
+         color: white;
+         border: none;
+         outline: none;
+         border-radius: 2px;
+         font-weight: bold;
+       }
+       label{
+         display: flex;
+         flex-direction: row;
+         font-weight: bold;
+       }
+       label p{
+         margin-left: 10px;
+         font-weight: 300;
+       }
+     </style>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">KCS LIBRARY</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="/dashboard">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a> 
+        <ul class="sub-menu blank" id="btn">
+          <li><a class="link_name" href="/dashboard">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/explore">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/explore">Explore</a></li>
+        </ul>
+      </li>
+      
+      <li class="active">
+        <a href="/settings">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/settings">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!-- <img src="image/profile.jpg" alt="profileImg"> -->
+      </div>
+      <div class="name-job">
+        <div id="profile_name">Justin</div>
+        <div id="job">librarian</div>
+      </div>
+      <i class='bx bx-log-out'  onClick="location.href = ''"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text" id="menu">MENU</span>
+    </div>
+    <div class="setting">
+    
+        <h3>Personal Information</h3>
+        <label for="user-name">Name:<p></p></label>
+        <label for="user-code">Code:<p></p></label>
+        <label for="user-password">Password:<p></p></label>
+        <label for="user-title">Title:<p></p></label>
+    </div>
+  </section>
+  
+<script src="../js/sidebar.js">
+
+</script>
+  <script>
+    document.querySelector('label[for=user-name] p').textContent = JSON.parse(localStorage.kcslibraryInfo).names
+    document.querySelector('label[for=user-code] p').textContent = JSON.parse(localStorage.kcslibraryInfo).ID
+    document.querySelector('label[for=user-password] p').textContent = "password@123"
+    document.querySelector('label[for=user-title] p').textContent = JSON.parse(localStorage.kcslibraryInfo).title
+
+  </script>
+</body>
+</html>

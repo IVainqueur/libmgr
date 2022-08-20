@@ -1,0 +1,152 @@
+tr{
+    transition: .3s ease;
+    cursor: pointer;
+    position: relative;
+}
+tr:nth-child(even){
+    background-color:white;
+}
+tr:hover{
+    filter: brightness(0.8);
+}
+
+
+
+/* body > *:not(.popUp){
+    filter: brightness(0.5);
+    pointer-events: none;
+} */
+.popUpDIV{
+    --width: 100vw;
+    --height: 100vh;
+    height: var(--height);
+    width: var(--width);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    background: rgba(0,0,0,0.3);
+    /* pointer-events: none; */
+}
+.popUp{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px;
+    display: none;
+    flex-direction: column;
+    z-index: 102;
+    width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+
+.popUp input{
+    padding: 10px;
+    background: #c9c6c6;
+    border: none;
+    outline: none;
+}
+
+.popUp button{
+    padding: 10px;
+    background: #1d1b31;
+    color: white;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+}
+
+.popUpMode{
+    display: flex;
+}
+
+.popUp label{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.popUp label select{
+    margin-top: 10px;
+    padding: 10px;
+}
+.checking::after{
+    content: "Checking...";
+    margin-top: 10px;
+}
+.Error::after{
+    content: "Something went wrong. Please try again.";
+    color: red;
+}
+.NonExistent::after{
+    content: "Not found";
+    color: red;
+}
+.AlreadyBorrowed::after{
+    content: "Already Borrowed";
+    color: red;
+}
+
+.ExistAndNotBorrowed::after{
+    content: "Available";
+    color: rgb(0, 190, 0);
+}
+
+.Found::after{
+    content: attr(todisplay);
+    color: rgb(0, 190, 0);
+}
+.notFilled::after{
+    color: red;
+    content: "This field needs to be filled";
+}
+
+.noCondition::after{
+    color: red;
+    content: "This field needs to be filled";
+
+}
+.noSuchUser::after{
+    color: red;
+    content: "No such user in the database";
+}
+#title{
+ border: none;   
+}
+
+#NewCodeBTN{
+    width: 200px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* border-radius: 55px; */
+}
+
+#NewCodeBTN:hover{
+   animation: bounce .5s ease;
+}
+
+@keyframes bounce{
+    0%{
+      transform: translateY(0);
+    }
+    /* 20%{
+      transform: translateY(-2px);
+    }
+    40%{
+      transform: translateY(0);
+    } */
+    60%{
+      transform: translateY(-2px);
+    }
+    100%{
+      transform: translateY(0);
+    }
+ }
+
+
+ /* d92424 */

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard| KCS Library</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <!-- <link rel="stylesheet" href="../css/settings.css"> -->
+    <link rel="stylesheet" href="../css/addBook.css">
+   
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus'></i>
+      <span class="logo_name">KCS LIBRARY</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="/dashboard">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a> 
+        <ul class="sub-menu blank" id="btn">
+          <li><a class="link_name" href="/dashboard">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-book'></i>
+            <span class="link_name" id="manage">Manage Books</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Manage Books</a></li>
+          <li><a href="/addBook">Add Books</a></li>
+          
+          <li><a href="/issued">Issued books</a></li>
+          <li><a href="/issue">Issue</a></li>
+          <li><a href="/updateBook">Update</a></li>
+        </ul>
+      </li>
+    
+      <li>
+      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-user-account'></i>
+            <span class="link_name">Manage users</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Manage users</a></li>
+          <li><a href="/manageUsers">View users</a></li>
+          <li><a href="/addUser">Add a User</a></li>
+          <li><a href="/overdue">Overdue </a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/explore">
+          <i class='bx bx-compass' ></i>
+          <span class="link_name">Explore</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/explore">Explore</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/history">
+          <i class='bx bx-history'></i>
+          <span class="link_name">History</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/history">History</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/settings">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="/settings">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!-- <img src="image/profile.jpg" alt="profileImg"> -->
+      </div>
+      <div class="name-job">
+        <div id="profile_name">Justin</div>
+        <div id="job">librarian</div>
+      </div>
+      <i class='bx bx-log-out'  onClick="location.href = ''"></i>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text" id="menu">MENU</span>
+    </div>
+    <div class="add-user">
+        <h1 id="PageTitle">Add a User</h1>
+    <form>
+      <label for="names">Names
+        <input type=" text" placeholder="Fullname" class="inpt" required>
+      </label>
+      
+      <label for="user-id">ID / Code
+        <input type=" text" placeholder="kcs-xxxx" class="inpt" required>
+      </label>
+      
+      <label for="user-class">Class
+        <input type=" text" placeholder="If any.   eg: S-1-A, S-4-MPC" class="inpt">
+      </label>
+      
+      <label for="user-title">Title
+        <select name="title" id="TitleBox" required>
+          <option value="">Choose title</option>
+          <option value="teacher">Teacher</option>
+          <option value="student">Student</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </label>
+      
+      <label for="">
+        Note: The default password for all users is <b>password@123</b><br><br>
+      </label>
+      <button class="add-btn">ADD</button>
+    </form>
+    </div>
+    
+  </section>
+<script src="../js/sidebar.js">
+
+</script>
+<script>
+  document.querySelector('form').addEventListener('submit', (e)=>{
+    e.preventDefault()
+    // console.log(e)
+    let theInfoToSend = {
+      names: document.querySelector('label[for=names] input').value,
+      ID: document.querySelector('label[for=user-id] input').value,
+      class: document.querySelector('label[for=user-class] input').value,
+      title: document.querySelector('label[for=user-title] select').selectedOptions[0].value,
+
+    }
+    if(theInfoToSend.class == '') theInfoToSend.class = null
+    fetch('/addUser', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(theInfoToSend)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.code == "#AlreadyTaken") return AlertAlt(data.data)
+      if(data.code == "#Error") return AlertAlt("Something went wrong. Please try again.")
+      AlertAlt("Successfully added new user")
+      document.querySelector('form').reset()
+      // console.log(data)
+    })
+    .catch((e)=>{
+      AlertAlt("Something went wrong. Please try again.")
+    })
+  })
+</script>
+  
+</body>
+</html>
