@@ -122,7 +122,7 @@ async function checkForBook(){
 }
 async function checkForUser(){
     document.querySelector('#StudentCodeOrNameBox').className = "checking"
-    let what = isNaN(document.querySelector('#StudentCodeOrNameBoxInput').value)  ? "code" : "names"
+    let what = isNaN(document.querySelector('#StudentCodeOrNameBoxInput').value)  ? "name" : "code"
     await fetch("/checkForUser", {
         method: "POST",
         headers: {
