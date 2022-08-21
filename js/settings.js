@@ -5,7 +5,7 @@ const getCategories = async () => {
 
     for (let _category of data.categories) {
         let category = document.createElement("span")
-        console.log(category)
+        // console.log(category)
         category.textContent = _category
         category.classList.add('category')
         document.querySelector("#CategorySettingBox").insertBefore(category, document.querySelector('#AddCategoryInput'))
