@@ -92,7 +92,7 @@ if(document.querySelector('#AddCategoryBTN')){
                 location.reload()
             })
             .catch(e => {
-                AlertAlt(e)
+                AlertAlt(e.message)
             })
         })
     })
