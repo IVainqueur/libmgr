@@ -77,5 +77,7 @@ document.querySelector('#EditBTN').addEventListener('click', (e) => {
 })
 
 if(document.querySelector('#AddCategoryBTN')){
-    document.querySelector('#AddCategoryBTN').addEventListener('click', ())
+    document.querySelector('#AddCategoryBTN').addEventListener('click', ()=>{
+        
+    })
 }
