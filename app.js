@@ -386,6 +386,7 @@ app.get('/getCategories', authToken, (req, res) => {
         if (err) return res.json({
             code: "#Error"
         })
+        console.log(result)
         res.json({
             code: "#Success",
             categories: result.values
