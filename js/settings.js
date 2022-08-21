@@ -97,5 +97,5 @@ if (document.querySelector('#AddCategoryBTN')) {
                 AlertAlt(e.message)
             })
     })
-})
+
 }
