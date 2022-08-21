@@ -89,7 +89,10 @@ if(document.querySelector('#AddCategoryBTN')){
             .then(res => res.json())
             .then(data => {
                 if(data.code === "#Error") throw new Error(data.message)
-                else
+                location.reload()
+            })
+            .catch(e => {
+                AlertAlt(e)
             })
         })
     })
