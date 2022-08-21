@@ -61,7 +61,6 @@ if(!editing){
     
     }
     console.log("The new info", toSend)
-    // return AlertAlt("Sorry. Can not update your info right now. The feature is still under construction.")
     fetch('/updateSettings', {
     method: 'POST',
     headers: {
