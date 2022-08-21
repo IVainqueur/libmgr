@@ -7,7 +7,7 @@ const getCategories = async () => {
         let category = document.createElement("span")
         category.textContent = category
         // option.textContent = category
-        document.querySelector("#CategoryChoice").appendChild(option)
+        document.querySelector("#CategorySettingBox").appendChild(option)
     }
 
     console.log("%c End of the function", "color: green; font-weight: bold;")
