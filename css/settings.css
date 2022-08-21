@@ -17,6 +17,9 @@ h3{
     min-width: 400px;
     position: relative;
 }
+.setting input{
+    padding: 10px
+}
 
 #EditBTN{
     position: absolute;
