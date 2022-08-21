@@ -80,6 +80,11 @@ if(document.querySelector('#AddCategoryBTN')){
     document.querySelector('#AddCategoryBTN').addEventListener('click', ()=>{
         let val = document.querySelector('#AddCategoryInput').value
         if(val === '') return
-        fetch('/addCategory')
+        fetch('/addCategory', {
+            method: 'POST',
+            headers: {
+                'Content-Type'
+            }
+        })
     })
 }
