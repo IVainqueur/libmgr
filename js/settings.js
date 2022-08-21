@@ -86,7 +86,7 @@ if(document.querySelector('#AddCategoryBTN')){
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({newCategory: val})
-            .then(
+            .then(res => res.json())
         })
     })
 }
