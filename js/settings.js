@@ -6,8 +6,8 @@ const getCategories = async () => {
     for (let category of data.categories) {
         let category = document.createElement("span")
         category.textContent = category
-        // option.textContent = category
-        document.querySelector("#CategorySettingBox").appendChild(option)
+        category.classList.add('category')
+        document.querySelector("#CategorySettingBox").appendChild(category)
     }
 
     console.log("%c End of the function", "color: green; font-weight: bold;")
