@@ -76,24 +76,24 @@ document.querySelector('#EditBTN').addEventListener('click', (e) => {
     }
 })
 
-if(document.querySelector('#AddCategoryBTN')){
-    document.querySelector('#AddCategoryBTN').addEventListener('click', ()=>{
+if (document.querySelector('#AddCategoryBTN')) {
+    document.querySelector('#AddCategoryBTN').addEventListener('click', () => {
         let val = document.querySelector('#AddCategoryInput').value
-        if(val === '') return
+        if (val === '') return
         fetch('/addCategory', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({newCategory: val})
-            .then(res => res.json())
-            .then(data => {
-                if(data.code === "#Error") throw new Error(data.message)
-                location.reload()
-            })
-            .catch(e => {
-                AlertAlt(e.message)
-            })
+            body: JSON.stringify({ newCategory: val })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.code === "#Error") throw new Error(data.message)
+                    location.reload()
+                })
+                .catch(e => {
+                    AlertAlt(e.message)
+                })
         })
     })
 }
