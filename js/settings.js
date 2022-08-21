@@ -1,4 +1,19 @@
 AlertAlt("The data being showed below might not be up-to-date. Please wait while the update data is being loaded")
+const getCategories = async () => {
+    let res = await fetch("/getCategories")
+    let data = await res.json()
+
+    for (let category of data.categories) {
+        let option = document.createElement("option")
+        option.value = category
+        option.textContent = category
+        document.querySelector("#CategoryChoice").appendChild(option)
+    }
+
+    console.log("%c End of the function", "color: green; font-weight: bold;")
+}
+
+getCategories()
 const getSettings = async () => {
     let request = await fetch('/getSettings', {
         method: 'POST',
