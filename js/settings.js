@@ -87,6 +87,9 @@ if(document.querySelector('#AddCategoryBTN')){
             },
             body: JSON.stringify({newCategory: val})
             .then(res => res.json())
+            .then(data => {
+                if(data.code === "#Error")
+            })
         })
     })
 }
