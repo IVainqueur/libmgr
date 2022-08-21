@@ -86,14 +86,16 @@ if (document.querySelector('#AddCategoryBTN')) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ newCategory: val })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.code === "#Error") throw new Error(data.message)
-                    location.reload()
-                })
-                .catch(e => {
-                    AlertAlt(e.message)
-                })
-        })
+        }
+        )
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === "#Error") throw new Error(data.message)
+                location.reload()
+            })
+            .catch(e => {
+                AlertAlt(e.message)
+            })
     })
+})
 }
