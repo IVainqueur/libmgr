@@ -85,7 +85,8 @@ if(document.querySelector('#AddCategoryBTN')){
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({})
+            body: JSON.stringify({newCategory: val})
+            .then(
         })
     })
 }
