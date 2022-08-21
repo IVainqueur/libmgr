@@ -8,7 +8,7 @@ const getCategories = async () => {
         // console.log(category)
         category.textContent = _category
         category.classList.add('category')
-        document.querySelector("#CategorySettingBox").appendChild(category)
+        document.querySelector(".categories").appendChild(category)
     }
 
     console.log("%c End of the function", "color: green; font-weight: bold;")
