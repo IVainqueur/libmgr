@@ -83,8 +83,9 @@ if(document.querySelector('#AddCategoryBTN')){
         fetch('/addCategory', {
             method: 'POST',
             headers: {
-                'Content-Type'
-            }
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({})
         })
     })
 }
