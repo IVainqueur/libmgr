@@ -4,7 +4,7 @@ const getCategories = async () => {
     let data = await res.json()
 
     for (let category of data.categories) {
-        let option = document.createElement("option")
+        let option = document.createElement("div")
         option.value = category
         option.textContent = category
         document.querySelector("#CategoryChoice").appendChild(option)
