@@ -3,9 +3,10 @@ const getCategories = async () => {
     let res = await fetch("/getCategories")
     let data = await res.json()
 
-    for (let category of data.categories) {
+    for (let _category of data.categories) {
         let category = document.createElement("span")
-        category.textContent = category
+        console.log(category)
+        category.textContent = _category
         category.classList.add('category')
         document.querySelector("#CategorySettingBox").insertBefore(category, document.querySelector('#AddCategoryInput'))
     }
