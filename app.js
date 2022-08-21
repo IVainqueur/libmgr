@@ -110,9 +110,7 @@ app.post("/addBook", (req, res)=>{
             code: "#Success"
         })
     })
-    // res.json({
-    //     data: req.body
-    // })
+
 })
 app.get('/manageUsers', authToken, (req, res)=>{
     jwt.verify(req.cookies.jwt, "librarySecret", (err, result)=>{
@@ -369,6 +367,17 @@ app.post('/newCode', (req, res)=>{
             if(err) addToQuantity()
         })
     }
+})
+app.post('/addCategory', (req, res)=>{
+    let {newCategory} = req.body
+    if(!newCategory){
+        console.log("No New Category Was Set")
+        res.json({code: "#NoNewCategory"})
+    }
+    require('./models/ml-setting').updateOne({key: "categories"}, {$push: {values: newCategory}}, (err, data)=>{
+        if(err) return res.json({code: "#Error", message: err.message})
+        return res.json({code: "#Success", message: data})
+    })
 })
 app.get('/getCategories', authToken, (req, res)=>{
     require('./models/ml-setting').findOne({key: "categories"}, (err, result)=>{
