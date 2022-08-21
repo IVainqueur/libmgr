@@ -78,6 +78,6 @@ document.querySelector('#EditBTN').addEventListener('click', (e) => {
 
 if(document.querySelector('#AddCategoryBTN')){
     document.querySelector('#AddCategoryBTN').addEventListener('click', ()=>{
-        
+        let val = document.querySelector('#AddCategoryInput').value
     })
 }
