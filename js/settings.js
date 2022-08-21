@@ -7,7 +7,7 @@ const getCategories = async () => {
         let category = document.createElement("span")
         category.textContent = category
         category.classList.add('category')
-        document.querySelector("#CategorySettingBox").insertBefore(document.querySelector('#AddCategoryInput'),category)
+        document.querySelector("#CategorySettingBox").insertBefore(category, document.querySelector('#AddCategoryInput'))
     }
 
     console.log("%c End of the function", "color: green; font-weight: bold;")
