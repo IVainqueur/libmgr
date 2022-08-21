@@ -384,7 +384,8 @@ app.post('/addCategory', (req, res) => {
 app.get('/getCategories', authToken, (req, res) => {
     require('./models/ml-setting').findOne({ key: "categories" }, (err, result) => {
         if (err) return res.json({
-            code: "#Error"
+            code: "#Error",
+            message: err
         })
         console.log(result)
         res.json({
